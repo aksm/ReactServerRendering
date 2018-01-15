@@ -1,0 +1,30 @@
+const path = require('path');
+
+module.exports = {
+  // tell webpack root file of server app
+  entry: './src/client/client.js',
+
+  // tell webpack where to put generated output file
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public')
+  },
+
+  // tell webpack to run babel on every file it runs
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            'react',
+            'stage-0',
+            ['env', { targets: { browsers: ['last 2 versions'] }}]
+          ]
+        }
+      }
+    ]
+  }
+};
