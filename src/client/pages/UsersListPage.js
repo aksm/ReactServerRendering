@@ -16,7 +16,7 @@ class UsersList extends Component {
   render() {
     return (
       <div>
-        Big list of users, braj:
+        Big list of users, bruh:
         <ul>{this.renderUsers()}</ul>
       </div>
     );
